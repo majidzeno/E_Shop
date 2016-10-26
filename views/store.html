@@ -1,0 +1,29 @@
+<section class="store">
+    <!-- <div class="search">
+      <label>Search : </label>
+      <input type="text" placeholder="Search for product " autofocus ng-model = "name">
+    </div> -->
+    <h1 id="title">{{ title }}</h1>
+    <h3 id="promo" >{{ promo }}</h3>
+    </br></br>
+    </br></br>
+    <div class="container-fluid">
+        <div ng-repeat="product in products|orderBy:'cat'"  class="col-sm-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">BLACK FRIDAY DEAL</div>
+                <div class="panel-body">
+                    <a href="#/details/{{product.id}}">
+                        <img ng-src="img/{{product.shortname}}.jpg" class="img-responsive" style="width:100%" alt="photo of {{product.name}}" >
+                    </a>
+                    <div class="info">
+                        <p class="title">{{ product.name }} </p>
+                        <p class="bio">{{ product.bio }} </p>
+                        <p class = "price">{{ product.price| currency }} </p>
+                    </div>
+                    <div class="panel-footer"><p class="category">Category : {{ product.cat }} </p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

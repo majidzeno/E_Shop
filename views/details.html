@@ -1,0 +1,26 @@
+<section class="productinfo">
+<div class="product" ng-model = "products" >
+  <h1>{{currentProduct.name}}</h1>
+<div class="info">
+  <h3>{{currentProduct.bio}}</h3>
+<img class = "imgInfo" ng-src="img/{{currentProduct.shortname}}.jpg" alt="Photo of {{currentProduct.name}}" />
+<h2 class="priceDetail">{{currentProduct.price|currency}}</h2>
+</br>
+</br>
+<ul class="description">
+  <li ng-repeat  = "point in currentProduct.description">{{point}} </li>
+</ul>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxAdd to Cart xxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div class="Quantity">
+
+  <button type="button"class="btn btn-primary" name="button" ng-click="addFunction()" ng-model ="add">Add to Cart</button></br>
+
+<h1 ng-repeat = "product in cart track by $index">CART {{product.name}} {{product.quantity}}</h1>
+{{cart}}
+  <br>
+    <button type="button" class="btn btn-danger" ng-click="removeFunction()"  ng-hide ="checkCount()">Remove</button></br>
+</div>
+<!-- <a href="index.html#/store"> Back to Store</a> -->
+<a href="index.html#/cart"><button type="button" class="btn btn-warning">  Checkout </button></a>
+<a href="index.html#/store"><button type="button" class="btn btn-primary">  Back to Store </button></a>
+</section>
